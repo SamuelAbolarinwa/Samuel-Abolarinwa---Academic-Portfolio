@@ -150,41 +150,46 @@ export default function App() {
       
       {/* Stable Anchored/Sticky Navigation Bar with crisp translucent document-like layout */}
       <header className="sticky top-0 z-50 w-full h-16 bg-[#F7F6F2]/80 backdrop-blur-md border-b border-[#DEDAD4]/50 select-none" style={{ willChange: 'transform' }}>
-        <div className="max-w-[860px] mx-auto h-full px-6 md:px-12 flex flex-row justify-between items-center">
-          <div className="font-serif tracking-tight font-semibold text-[#2B4163] text-base md:text-lg select-none">
+        <div className="max-w-[860px] mx-auto h-full px-4 sm:px-6 md:px-12 flex flex-row justify-between items-center">
+          <div className="font-serif tracking-tight font-semibold text-[#2B4163] text-[13px] sm:text-base md:text-lg select-none">
             S.A. Abolarinwa
           </div>
-          <div className="flex items-center justify-center gap-x-2 sm:gap-x-3 text-[11px] sm:text-xs md:text-sm font-medium">
+          <div className="flex items-center justify-center gap-x-2.5 sm:gap-x-4 md:gap-x-6 text-[10.5px] sm:text-xs md:text-sm font-medium">
             <a 
               href="#about" 
               onClick={(e) => handleScroll(e, 'about')}
-              className="text-[#6B6660] hover:text-[#2B4163] transition-colors duration-150"
+              className="text-[#6B6660] hover:text-[#2B4163] transition-colors duration-150 relative pb-0.5 group"
             >
               About
+              <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#2B4163] transition-all duration-300 ease-in-out group-hover:w-full"></span>
             </a>
-            <span className="text-[#DEDAD4]">&middot;</span>
+            <span className="text-[#DEDAD4] select-none hidden sm:inline">&middot;</span>
             <a 
               href="#publications" 
               onClick={(e) => handleScroll(e, 'publications')}
-              className="text-[#6B6660] hover:text-[#2B4163] transition-colors duration-150"
+              className="text-[#6B6660] hover:text-[#2B4163] transition-colors duration-150 relative pb-0.5 group"
             >
-              Publications & Presentations
+              <span className="hidden md:inline">Publications & Presentations</span>
+              <span className="inline md:hidden">Publications</span>
+              <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#2B4163] transition-all duration-300 ease-in-out group-hover:w-full"></span>
             </a>
-            <span className="text-[#DEDAD4]">&middot;</span>
+            <span className="text-[#DEDAD4] select-none hidden sm:inline">&middot;</span>
             <a 
               href="#projects" 
               onClick={(e) => handleScroll(e, 'projects')}
-              className="text-[#6B6660] hover:text-[#2B4163] transition-colors duration-150"
+              className="text-[#6B6660] hover:text-[#2B4163] transition-colors duration-150 relative pb-0.5 group"
             >
               Projects
+              <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#2B4163] transition-all duration-300 ease-in-out group-hover:w-full"></span>
             </a>
-            <span className="text-[#DEDAD4]">&middot;</span>
+            <span className="text-[#DEDAD4] select-none hidden sm:inline">&middot;</span>
             <a 
               href="#news" 
               onClick={(e) => handleScroll(e, 'news')}
-              className="text-[#6B6660] hover:text-[#2B4163] transition-colors duration-150"
+              className="text-[#6B6660] hover:text-[#2B4163] transition-colors duration-150 relative pb-0.5 group"
             >
               News
+              <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#2B4163] transition-all duration-300 ease-in-out group-hover:w-full"></span>
             </a>
           </div>
         </div>
@@ -284,7 +289,9 @@ export default function App() {
                   
                   {/* Understated CV link button */}
                   <a 
-                    href="#" 
+                    href="https://drive.google.com/file/d/1vuQWSba0PsGcwkmFoDExKGN7I_vRTmSx/view?usp=sharing" 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 border border-[#2B4163]/20 bg-[#2B4163]/5 hover:bg-[#2B4163] text-[#2B4163] hover:text-[#F7F6F2] hover:border-[#2B4163] px-2.5 py-1 rounded text-xs font-mono tracking-wide uppercase transition-all duration-200 leading-none h-[28px] sm:h-[30px]"
                     id="button-cv"
                   >
@@ -366,7 +373,7 @@ export default function App() {
                 <div className="space-y-8">
                   {roboticsProjects.map((project, idx) => (
                     <div key={idx} className="border-l border-[#DEDAD4] pl-4 py-1 relative group">
-                      <div className="flex justify-between items-baseline mb-1">
+                      <div className="flex flex-row justify-between items-start gap-x-3 mb-1">
                         <h4 className="font-bold text-base text-[#1A1917]">
                           <a 
                             href={project.link}
@@ -411,7 +418,7 @@ export default function App() {
                 <div className="space-y-8">
                   {mlProjects.map((project, idx) => (
                     <div key={idx} className="border-l border-[#DEDAD4] pl-4 py-1 relative group">
-                      <div className="flex justify-between items-baseline mb-1">
+                      <div className="flex flex-row justify-between items-start gap-x-3 mb-1">
                         <h4 className="font-bold text-base text-[#1A1917]">
                           <a 
                             href={project.link}
@@ -451,7 +458,7 @@ export default function App() {
                 <div className="space-y-8">
                   {controlProjects.map((project, idx) => (
                     <div key={idx} className="border-l border-[#DEDAD4] pl-4 py-1 relative group">
-                      <div className="flex justify-between items-baseline mb-1">
+                      <div className="flex flex-row justify-between items-start gap-x-3 mb-1">
                         <h4 className="font-bold text-base text-[#1A1917]">
                           <a 
                             href={project.link}
