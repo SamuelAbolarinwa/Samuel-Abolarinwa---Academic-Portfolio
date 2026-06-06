@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Computer Modern", serif;
+}
+
+body {
+  font-family: "Computer Modern", serif;
+  background-color: #F7F6F2;
+  color: #1A1917;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scroll behavior and thin custom styling matching a LaTeX document */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Academic horizontal rules */
+hr {
+  border: 0;
+  border-top: 1px solid #DEDAD4;
+}
